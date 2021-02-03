@@ -6,7 +6,9 @@ sheet = workbook.active
 
 spellingbeefile = open('spellingbeewords.txt').read().split()
 
-count = 1
+sheet['A1'] = "----Words----"
+sheet['B1'] = "----Defs----"
+count = 2
 for word in spellingbeefile:
     data = requests.get(f'https://api.dictionaryapi.dev/api/v2/entries/en_US/{word}').json()
     try:
